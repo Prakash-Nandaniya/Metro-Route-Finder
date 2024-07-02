@@ -74,7 +74,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.sendFile("./client/build/index.html");
+  res.sendFile("../client/build/index.html");
 });
 
 app.get("/suggest", async (req, res) => {
