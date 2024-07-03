@@ -87,10 +87,13 @@ app.get("/suggest", async (req, res) => {
   if (input[-1] == "*") {
     return res.json([]);
   }
+   console.log(1);
   const suggestions = await getSuggestionsForInput(input); 
+   console.log(2);
   if(suggestions[0]==input){
     return res.json([]);
   }
+   console.log(3);
    console.log(suggestions);
  return res.json(suggestions);
 });
