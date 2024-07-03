@@ -105,6 +105,7 @@ app.post("/getpath", async (req, res) => {
 
   try {
     const { stdout } = await execFilePromise("./pathfinder.exe", [from, to]);
+     console.log(stdout);
     const dataset = stdout.split(/\r?\n/).map(name => name.trim()).filter(name => name !== "");
     const responseArray = await getlocationsarray(dataset);
     res.json(responseArray); // Send the response back to the client
