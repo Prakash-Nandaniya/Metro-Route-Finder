@@ -2,7 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import { execFile } from "node:child_process";
-
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import util from "util";
 const execFilePromise = util.promisify(execFile);
 
@@ -74,7 +75,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.sendFile("../client/build/index.html");
+   const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 app.get("/suggest", async (req, res) => {
