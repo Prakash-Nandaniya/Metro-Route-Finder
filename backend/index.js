@@ -72,12 +72,12 @@ async function getlocationsarray(dataset) {
   return responseArray;
 }
 
-app.use(express.static(path.join(__dirname,'client/build')));
+app.use(express.static(path.join(__dirname,'../client/build')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-res.sendFile(path.join(__dirname, 'client/build/index.html'));
+res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 app.get("/suggest", async (req, res) => {
