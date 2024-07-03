@@ -77,10 +77,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
+   console.log("first request")
 res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 app.get("/suggest", async (req, res) => {
+   console.log("request for suggest")
   const input = req.query.input; // Access the input query parameter
   if (input[-1] == "*") {
     return res.json([]);
@@ -93,6 +95,7 @@ app.get("/suggest", async (req, res) => {
 });
 
 app.post("/getpath", async (req, res) => {
+   console.log("request for getpath")
   const from = req.body.from;
   const to = req.body.to;
 
