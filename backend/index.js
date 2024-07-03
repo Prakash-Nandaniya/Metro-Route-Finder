@@ -12,10 +12,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = process.env.PORT;
 const db = new pg.Client({
-   user: "postgres",
-  host: "prakashn362650.ddnsking.com", // Replace with your actual No-IP hostname
-  database: "metrodata",
-  password: "prakashn@03",
+   user: "prakkash",
+  host: "postgresql://prakkash:C82CMZQIKehYok0VCYz2OI7APULOfclx@dpg-cq2eg8bv2p9s73er6720-a/db_872y", // Replace with your actual No-IP hostname
+  database: "db_872y",
+  password: "C82CMZQIKehYok0VCYz2OI7APULOfclx",
   port: 5432,
 });
 db.connect();
