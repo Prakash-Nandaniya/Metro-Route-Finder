@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import util from "util";
 const execFilePromise = util.promisify(execFile);
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const port = process.env.PORT;
@@ -71,14 +72,14 @@ async function getlocationsarray(dataset) {
   return responseArray;
 }
 
-app.use(express.static("client/build"));
+app.use(express.static(path.join(__dirname,'client/build')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
    const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-res.sendFile(path.join(__dirname, './client/build/index.html'));
+res.sendFile(path.join(__dirname, 'client/build/index.html'));
 });
 
 app.get("/suggest", async (req, res) => {
