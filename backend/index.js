@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import { execFile } from "node:child_process";
-import { dirname } from 'path';
+import path from 'path';
 import { fileURLToPath } from 'url';
 import util from "util";
 const execFilePromise = util.promisify(execFile);
