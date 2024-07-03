@@ -91,6 +91,7 @@ app.get("/suggest", async (req, res) => {
   if(suggestions[0]==input){
     return res.json([]);
   }
+   console.log(suggestions);
  return res.json(suggestions);
 });
 
