@@ -77,8 +77,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-   const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 res.sendFile(path.join(__dirname, 'client/build/index.html'));
 });
 
