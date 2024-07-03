@@ -9,11 +9,11 @@ const execFilePromise = util.promisify(execFile);
 const app = express();
 const port = process.env.PORT;
 const db = new pg.Client({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+   user: "postgres",
+  host: "prakashn362650.ddnsking.com", // Replace with your actual No-IP hostname
+  database: "metrodata",
+  password: "prakashn@03",
+  port: 5432,
 });
 db.connect();
 
