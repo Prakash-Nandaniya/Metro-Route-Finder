@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT;
 const db = new pg.Client({
    user: "prakkash",
-  host: "postgresql://prakkash:C82CMZQIKehYok0VCYz2OI7APULOfclx@dpg-cq2eg8bv2p9s73er6720-a/db_872y", // Replace with your actual No-IP hostname
+  host: "postgresql://prakkash:C82CMZQIKehYok0VCYz2OI7APULOfclx@dpg-cq2eg8bv2p9s73er6720-a.oregon-postgres.render.com/db_872y", // Replace with your actual No-IP hostname
   database: "db_872y",
   password: "C82CMZQIKehYok0VCYz2OI7APULOfclx",
   port: 5432,
