@@ -55,7 +55,7 @@ router.post("/getpath", async (req, res) => {
   const to = req.body.to;
 
   try {
-    const { stdout } = await execFilePromise("./metro_new.exe", [from, to]);
+    const { stdout } = await execFilePromise("./pathfinder.exe", [from, to]);
     const dataset = stdout
       .split(/\r?\n/)
       .map((name) => name.trim())
